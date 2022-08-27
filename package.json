@@ -1,7 +1,7 @@
 {
-  "name": "Sigma's Music",
+  "name": "Sigma bot",
   "version": "13.5.1",
-  "description": "Sigma's music bot",
+  "description": "Sigma bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
