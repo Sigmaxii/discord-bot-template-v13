@@ -1,6 +1,5 @@
 const { MessageEmbed, Client,Modal, TextInputComponent, MessageButton, MessageActionRow  } = require("discord.js")
 const pre = require("../../schema/prefix.js");
-const config = require("../../config.json")
 module.exports = async (client, interaction) => {
    
     let prefix = client.prefix;
