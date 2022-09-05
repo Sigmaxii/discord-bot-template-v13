@@ -15,7 +15,7 @@
 # Installation
 
 ```js
-@ src/config.js
+//@ src/config.js
 module.exports = {
   token: "BOT-TOKEN" || process.env.token,  // bot token 
     prefix: ",", // prefix
