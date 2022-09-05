@@ -7,14 +7,9 @@
     "start": "node index.js"
   },
   "keywords": [
-    "lavalink",
-    "erela",
-    "music",
     "bot",
-    "discord-music",
-    "discord",
-    "musicbot"
-  ],
+    "discord"
+    ],
   "devDependencies": {
     "node": "^18.2.0"
   },
