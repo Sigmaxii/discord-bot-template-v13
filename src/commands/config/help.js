@@ -1,8 +1,8 @@
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
-const config = require('../../config.json');
+const config = require('../../config.js');
 module.exports = {
     name: "help",
-    category: "Information",
+    category: "config",
     aliases: [ "h", "commands","cmds" ],
     description: "Return all commands, or one specific command",
     args: false,
@@ -43,10 +43,10 @@ let embed1 = new MessageEmbed()
                 
     let but1 = new MessageButton().setCustomId("home").setLabel("Home").setStyle("PRIMARY").setEmoji('🏡');
 
-  /*  let but5 = new MessageButton().setCustomId("mod").setLabel("Moderation").setStyle("PRIMARY").setEmoji('🔨');
+  let but2 = new MessageButton().setCustomId("mod").setLabel("Moderation").setStyle("PRIMARY").setEmoji('🔨');
  
     let but3 = new MessageButton().setCustomId("info").setLabel("General").setStyle("PRIMARY").setEmoji('📜');
-*/
+
     let but4 = new MessageButton().setCustomId("config").setLabel("Config").setStyle("PRIMARY").setEmoji('👨‍💻');
 
 
@@ -54,7 +54,7 @@ let embed1 = new MessageEmbed()
      let _commands;
      let editEmbed = new MessageEmbed();
      
-    const m = await message.reply({ embeds: [embed], components: [new MessageActionRow().addComponents(but1, but5, but2, but3, but4)] });
+    const m = await message.reply({ embeds: [embed], components: [new MessageActionRow().addComponents(but1,  but2, but3, but4)] });
 
     const collector = m.createMessageComponentCollector({
       filter: (b) => {
@@ -68,28 +68,28 @@ let embed1 = new MessageEmbed()
     });
     collector.on("end", async () => {
 		 if(!m) return;
-        await m.edit({ components: [new MessageActionRow().addComponents(but1.setDisabled(true), but2.setDisabled(true), but5.setDisabled(true), but3.setDisabled(true), but4.setDisabled(true))] }).catch(() => {});
+        await m.edit({ components: [new MessageActionRow().addComponents(but1.setDisabled(true), but2.setDisabled(true),  but3.setDisabled(true), but4.setDisabled(true))] }).catch(() => {});
     });
     collector.on('collect', async (b) => {
         if(b.customId === "home") {
            if(!m) return;
-           return await m.edit({ embeds: [embed], components: [new MessageActionRow().addComponents(but1, but5, but2, but3, but4)] })
+           return await m.edit({ embeds: [embed], components: [new MessageActionRow().addComponents(but1,  but2, but3, but4)] })
         }
-     /*   if(b.customId === "mod") {
+       if(b.customId === "mod") {
          _commands = client.commands.filter((x) => x.category && x.category === "moderation").map((x) => `\`${x.name}\``);
              editEmbed.setColor(client.embedColor).setDescription(_commands.join(` | `)).setTitle("Moderation Commands").setFooter(`Total ${_commands.length} Moderation commands.`);
            if(!m) return;
-           return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1, but5, but2, but3, but4)] })
+           return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1,  but2, but3, but4)] })
         }
          if(b.customId == "info") {
          _commands = client.commands.filter((x) => x.category && x.category === "general").map((x) => `\`${x.name}\``);
              editEmbed.setColor(client.embedColor).setDescription(_commands.join(` | `)).setTitle("General Commands").setFooter(`Total ${_commands.length} General commands.`)
-                     return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1, but5, but2, but3, but4)] })
-         } */
+                     return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1,  but2, but3, but4)] })
+         } 
          if(b.customId == "config") {
          _commands = client.commands.filter((x) => x.category && x.category === "config").map((x) => `\`${x.name}\``);
              editEmbed.setColor(client.embedColor).setDescription(_commands.join(` | `)).setTitle("Config Commands").setFooter(`Total ${_commands.length} Config commands.`)
-                     return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1, but5, but2, but3, but4)] })
+                     return await m.edit({ embeds: [editEmbed], components: [new MessageActionRow().addComponents(but1,  but2, but3, but4)] })
          
         }
      }); return true;
