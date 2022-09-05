@@ -1,8 +1,5 @@
-const Sigma = require("./src/structures/bot");
-const client = new Sigma();
-const keepAlive = require('./server.js')
-keepAlive();
-
+const Bot = require("./src/structures/bot");
+const client = new Bot();
 
 client.connect()
 module.exports = client;
