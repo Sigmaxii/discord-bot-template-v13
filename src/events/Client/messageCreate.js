@@ -1,6 +1,5 @@
 const { MessageEmbed, Permissions } = require("discord.js");
 const pre= require("../../schema/prefix.js");
-const config = require("../../config.json");
 module.exports = async (client, message) => {
    
    if (message.author.bot) return;
@@ -76,7 +75,7 @@ module.exports = async (client, message) => {
         return channel.send({ content: `Error: I need \`EMBED_LINKS\` permission to work.` });
       }
     if (command.owner && message.author.id !== `${client.owner}`) {
-        embed.setDescription("***Only <@config.ownerID> can use this command!***");
+        embed.setDescription("***Only bot owner can use this command!***");
         return message.reply({embeds: [embed]});
     }
 
