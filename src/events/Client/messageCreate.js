@@ -1,5 +1,6 @@
 const { MessageEmbed, Permissions } = require("discord.js");
 const pre= require("../../schema/prefix.js");
+const config = require("../../config.json");
 module.exports = async (client, message) => {
    
    if (message.author.bot) return;
@@ -8,15 +9,6 @@ module.exports = async (client, message) => {
     const channel = message?.channel;
     const ress =  await pre.findOne({guildid: message.guild.id})
    if(ress && ress.prefix)prefix = ress.prefix;
-  
-   if (message.content.match(`kosovo is serbia`)){
-    const alemb = new MessageEmbed()
-    .setColor('#ff0000')
-    .setImage("https://i1.prth.gr/images/963x541/files/2017/11/22/albania-kosovo.jpg")
-    .setTitle('UÇK')
-    .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/UCK_KLA_NEW.png/640px-UCK_KLA_NEW.png');
-    message.reply({content: 'IN YOUR DREAM ONLY, SERBITCH :flag_al: :flag_xk:!!!', embeds: [alemb]})
-  };
     const mention = new RegExp(`^<@!?${client.user.id}>( |)$`);
     if (message.content.match(mention)) {
       const embed = new MessageEmbed()
@@ -84,7 +76,7 @@ module.exports = async (client, message) => {
         return channel.send({ content: `Error: I need \`EMBED_LINKS\` permission to work.` });
       }
     if (command.owner && message.author.id !== `${client.owner}`) {
-        embed.setDescription("***Only <@453370780387115019> can use this command!***");
+        embed.setDescription("***Only <@config.ownerID> can use this command!***");
         return message.reply({embeds: [embed]});
     }
 
