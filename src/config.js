@@ -8,8 +8,6 @@ module.exports = {
     avatar: "AVATAR-URL", //or file 
     logs: "CHANNEL-ID", 
   invite: "BOT-INVITE-URL",
-  suggestions: "948876964595380255",
-  bugLogs: "948876983520071710",
   ready: "CHANNEL-ID", //bot on ready message
   status: "TESTING", //SWITCH IT TO GLOBAL IF YOUR SLASH COMMANDS ARE READY
    guildId: 'GUILD-ID', // add a guild id that u want to test your slash commands , if status is global then guild id is not needed
