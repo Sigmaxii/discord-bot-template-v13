@@ -77,16 +77,6 @@ class Bot extends Client {
     this.logger.log(`Loading Events Client ${eventName}`, "event");
     this.on(eventName, event.bind(null, this));
 });
-/**
- * Erela Manager Events
- */ 
-  readdirSync("./src/events/Lavalink/").forEach(file => {
-    const event = require(`../events/Lavalink/${file}`);
-    let eventName = file.split(".")[0];
-    this.logger.log(`Loading Events Lavalink ${eventName}`, "event");
-    this.manager.on(eventName, event.bind(null, client));
-});
-
      /**
  * Import all commands
  */
@@ -174,7 +164,7 @@ sChannel.send({
 });
 
 
-
+	 }
   
 		 connect() {
         return super.login(this.token);
