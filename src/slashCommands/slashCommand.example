@@ -1,0 +1,17 @@
+const { SlashCommandBuilder } = require('@discordjs/builders'); // must be defined
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName('') // command name
+    .setDescription('') // command description
+      .addUserOption(option => option
+       .setName('') // option name
+       .setDescription('') // option description
+       .setRequired(true) // true or false 
+    ),
+ // go to https://discordjs.guide/ and search for builders in case that u dont know how to use them.
+
+  run: async (client, interaction) => {
+  // code...
+    }
+  
+  }
