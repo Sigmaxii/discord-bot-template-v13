@@ -35,7 +35,7 @@ class Bot extends Client {
      this.logger = require("../utils/logger.js");
      this.token = this.config.token;
      this.id = this.config.id;
-     this.guild = this.guildID;
+     this.guild = this.guildId;
    /**  
     *  Database
     */
