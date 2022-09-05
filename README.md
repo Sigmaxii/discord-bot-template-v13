@@ -21,5 +21,4 @@ asdasjd
 
 # Join the community!
 
-Join us on our [Sigma's Discord Server](https://dsc.sigmaxii.com)!
-Join [Dungeon Server](https://dungeon.sigmaxii.com)!
+Join us on [Sigma's Discord Server](https://dsc.sigmaxii.com) & Join [Dungeon Server](https://dungeon.sigmaxii.com)!
