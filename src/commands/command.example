@@ -1,0 +1,16 @@
+module.exports = {
+    name: "", // command name
+    category: "", // category aka folder name
+    aliases: [], // aliases array 
+    description: "", // command description
+    args: false, // add true if you want user to add arguments to run the command
+    usage: "", // usage description
+    permission: [], // type of permission(s)
+    owner: false, // true if it is owner only
+ execute: async(message, args, client, prefix) => {
+
+  // code... 
+ 
+ }
+ 
+ }
