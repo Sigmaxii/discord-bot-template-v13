@@ -18,13 +18,6 @@ module.exports = async (client, interaction) => {
           content: `Only <@453370780387115019> can use this command!`
         }).catch(() => {});
         }
-        const player = interaction.client.manager.get(interaction.guildId);
-
-        if (SlashCommands.player && !player) {
-          await interaction.editReply({
-                    content: `There is no player for this guild.`
-                }).catch(() => {});
-        }
         if (SlashCommands.inVoiceChannel && !interaction.member.voice.channel) { 
           await interaction.editReply({
           content: `You must be in a voice channel!`
