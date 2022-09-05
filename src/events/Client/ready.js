@@ -2,7 +2,6 @@ const { prefix } = require("../../config.js");
 const { MessageEmbed } = require('discord.js');
 module.exports = async (client) => {
 
-    client.manager.init(client.user.id);
     client.logger.log(`${client.user.username} online!`, "ready");
 
   const arrayOfStatus = [
