@@ -13,7 +13,11 @@
 </p>
 
 # Installation
-
+Make sure to install the packages
+```js
+npm install
+```
+Set up config.js file
 ```js
 //@ src/config.js
 module.exports = {
@@ -33,7 +37,10 @@ module.exports = {
    guildId: 'GUILD-ID', // add a guild id that u want to test your slash commands , if status is global then guild id is not needed
 }
 ```
-
+Run Command 
+```js
+node index.js or node .
+```
 # Join the community!
 
 Join us on [Sigma's Discord Server](https://dsc.sigmaxii.com) & Join [Dungeon Server](https://dungeon.sigmaxii.com)!
